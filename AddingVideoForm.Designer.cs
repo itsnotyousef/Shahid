@@ -30,14 +30,12 @@ namespace Shahid
         private void InitializeComponent()
         {
             this.AddingVideoFormVideoNameTextBox = new System.Windows.Forms.TextBox();
-            this.AddingVideoFormVideoIdTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoURLTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoviewsTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoTypeTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoAgeAllowedTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.VideoName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,27 +50,17 @@ namespace Shahid
             this.AddingVideoFormVideoNameTextBox.BackColor = System.Drawing.Color.Black;
             this.AddingVideoFormVideoNameTextBox.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddingVideoFormVideoNameTextBox.ForeColor = System.Drawing.Color.DarkCyan;
-            this.AddingVideoFormVideoNameTextBox.Location = new System.Drawing.Point(322, 185);
+            this.AddingVideoFormVideoNameTextBox.Location = new System.Drawing.Point(322, 152);
             this.AddingVideoFormVideoNameTextBox.Name = "AddingVideoFormVideoNameTextBox";
             this.AddingVideoFormVideoNameTextBox.Size = new System.Drawing.Size(521, 33);
             this.AddingVideoFormVideoNameTextBox.TabIndex = 0;
-            // 
-            // AddingVideoFormVideoIdTextBox
-            // 
-            this.AddingVideoFormVideoIdTextBox.BackColor = System.Drawing.Color.Black;
-            this.AddingVideoFormVideoIdTextBox.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddingVideoFormVideoIdTextBox.ForeColor = System.Drawing.Color.DarkCyan;
-            this.AddingVideoFormVideoIdTextBox.Location = new System.Drawing.Point(322, 121);
-            this.AddingVideoFormVideoIdTextBox.Name = "AddingVideoFormVideoIdTextBox";
-            this.AddingVideoFormVideoIdTextBox.Size = new System.Drawing.Size(521, 33);
-            this.AddingVideoFormVideoIdTextBox.TabIndex = 1;
             // 
             // AddingVideoFormVideoURLTextBox
             // 
             this.AddingVideoFormVideoURLTextBox.BackColor = System.Drawing.Color.Black;
             this.AddingVideoFormVideoURLTextBox.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddingVideoFormVideoURLTextBox.ForeColor = System.Drawing.Color.DarkCyan;
-            this.AddingVideoFormVideoURLTextBox.Location = new System.Drawing.Point(322, 253);
+            this.AddingVideoFormVideoURLTextBox.Location = new System.Drawing.Point(322, 235);
             this.AddingVideoFormVideoURLTextBox.Name = "AddingVideoFormVideoURLTextBox";
             this.AddingVideoFormVideoURLTextBox.Size = new System.Drawing.Size(521, 33);
             this.AddingVideoFormVideoURLTextBox.TabIndex = 2;
@@ -122,27 +110,17 @@ namespace Shahid
             // 
             this.VideoName.AutoSize = true;
             this.VideoName.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VideoName.Location = new System.Drawing.Point(37, 188);
+            this.VideoName.Location = new System.Drawing.Point(37, 155);
             this.VideoName.Name = "VideoName";
             this.VideoName.Size = new System.Drawing.Size(182, 30);
             this.VideoName.TabIndex = 7;
             this.VideoName.Text = "Video Name";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 30);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Video Id";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 256);
+            this.label2.Location = new System.Drawing.Point(37, 235);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(163, 30);
             this.label2.TabIndex = 9;
@@ -224,14 +202,12 @@ namespace Shahid
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.VideoName);
             this.Controls.Add(this.AddingVideoFormVideoDescriptionTextBox);
             this.Controls.Add(this.AddingVideoFormVideoAgeAllowedTextBox);
             this.Controls.Add(this.AddingVideoFormVideoTypeTextBox);
             this.Controls.Add(this.AddingVideoFormVideoviewsTextBox);
             this.Controls.Add(this.AddingVideoFormVideoURLTextBox);
-            this.Controls.Add(this.AddingVideoFormVideoIdTextBox);
             this.Controls.Add(this.AddingVideoFormVideoNameTextBox);
             this.Name = "AddingVideoForm";
             this.Text = "AddingVideoForm";
@@ -245,14 +221,12 @@ namespace Shahid
         #endregion
 
         private System.Windows.Forms.TextBox AddingVideoFormVideoNameTextBox;
-        private System.Windows.Forms.TextBox AddingVideoFormVideoIdTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoURLTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoviewsTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoTypeTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoAgeAllowedTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoDescriptionTextBox;
         private System.Windows.Forms.Label VideoName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

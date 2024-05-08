@@ -38,8 +38,7 @@ namespace Shahid
 
         private void AddingViedoButton_Click(object sender, EventArgs e)
         {
-            
-            int video_id = Convert.ToInt32(AddingVideoFormVideoIdTextBox.Text.ToString());
+
             string video_name = AddingVideoFormVideoNameTextBox.Text.ToString();
             string url = AddingVideoFormVideoURLTextBox.Text.ToString();
             string video_type = AddingVideoFormVideoTypeTextBox.Text.ToString();
@@ -47,7 +46,7 @@ namespace Shahid
             int rating = Convert.ToInt32(AddingVideoFormVideoviewsTextBox.Text.ToString());
             int views = Convert.ToInt32(AddingVideoFormVideoviewsTextBox.Text.ToString());
             string description = AddingVideoFormVideoDescriptionTextBox.Text.ToString();
-            DataBase.AddVideo( video_id, video_name, url,video_type,age_allowed,rating,views,description);
+            DataBase.AddVideo(  video_name, url,video_type,age_allowed,rating,views,description);
         }
     }
 }

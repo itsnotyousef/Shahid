@@ -303,14 +303,14 @@ namespace Shahid
             return dr[0].ToString();
 
         }
-        public static void AddVideo(int video_id , string video_name , string url , string video_type,int age_allowed, int rating , int watches , string Decription) 
+        public static void AddVideo( string video_name , string url , string video_type,int age_allowed, int rating , int watches , string Decription) 
         {
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "insert into video values (:video_id , :video_name  , :url , :video_type , :age_allowed , :rating , :watches , :description) ";
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("video_id", video_id);
+            cmd.CommandText = "Add_Video ";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("video_name", video_name);
+            cmd.Parameters.Add("url", url);
             cmd.Parameters.Add("video_type", video_type);
             cmd.Parameters.Add("age_allowed", age_allowed);
             cmd.Parameters.Add("rating", rating);
@@ -379,8 +379,6 @@ namespace Shahid
                 MessageBox.Show("Video Has Been Deleted <333");
                
             }
-
-
 
         }
 
