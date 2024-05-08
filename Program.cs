@@ -20,7 +20,8 @@ namespace Shahid
             //Application.Run(new LoginForm());
             //Application.Run(new UserMainMenu());
             //Application.Run(new WelcomeForm());
-            Application.Run(new AdminForm());
+            //Application.Run(new AdminForm());
+            Application.Run(new CrystalReportForm());
         }
     }
 }
