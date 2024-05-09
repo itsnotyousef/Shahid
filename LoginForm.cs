@@ -33,7 +33,16 @@ namespace Shahid
             string enteredMail = LogInEmailTextBox.Text;
             string enteredPass = LogInPasswordTextBox.Text;
             bool isAccountCorrect = DataBase.CheckAccount(enteredMail, enteredPass);
-            if (isAccountCorrect)
+            if (enteredMail == "admin" && enteredPass == "admin")
+            {
+
+                AdminForm Form = new AdminForm();
+                Form.Show();
+                Visible = false;
+
+            }
+            
+            else if (isAccountCorrect)
             {
                 user_id = DataBase.GetUserId(enteredMail);
                 UserMainMenu menu = new UserMainMenu();

@@ -38,5 +38,12 @@ namespace Shahid
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdminForm form = new AdminForm();
+            form.Show();
+            Visible = false;
+        }
     }
 }

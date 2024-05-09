@@ -43,5 +43,12 @@ namespace Shahid
         {
             DataBase.conn.Dispose();
         }
+
+        private void MainMenuButton_Click(object sender, EventArgs e)
+        {
+            AdminForm Form = new AdminForm();
+            Form.Show();
+            Visible = false;
+        }
     }
 }

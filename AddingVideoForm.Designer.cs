@@ -43,6 +43,7 @@ namespace Shahid
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.AddingViedoButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddingVideoFormVideoNameTextBox
@@ -181,7 +182,7 @@ namespace Shahid
             this.AddingViedoButton.BackColor = System.Drawing.Color.Black;
             this.AddingViedoButton.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddingViedoButton.ForeColor = System.Drawing.Color.DarkCyan;
-            this.AddingViedoButton.Location = new System.Drawing.Point(421, 621);
+            this.AddingViedoButton.Location = new System.Drawing.Point(254, 605);
             this.AddingViedoButton.Name = "AddingViedoButton";
             this.AddingViedoButton.Size = new System.Drawing.Size(304, 78);
             this.AddingViedoButton.TabIndex = 15;
@@ -189,12 +190,26 @@ namespace Shahid
             this.AddingViedoButton.UseVisualStyleBackColor = false;
             this.AddingViedoButton.Click += new System.EventHandler(this.AddingViedoButton_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.button1.Location = new System.Drawing.Point(579, 605);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(304, 78);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Main Menu";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AddingVideoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1122, 725);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.AddingViedoButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -234,5 +249,6 @@ namespace Shahid
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button AddingViedoButton;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -113,6 +113,7 @@ namespace Shahid
             this.MainMenuButton.TabIndex = 6;
             this.MainMenuButton.Text = "Main Menu";
             this.MainMenuButton.UseVisualStyleBackColor = false;
+            this.MainMenuButton.Click += new System.EventHandler(this.MainMenuButton_Click);
             // 
             // button1
             // 

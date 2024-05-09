@@ -67,5 +67,19 @@ namespace Shahid
             Visible = false;
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Shahid.CrystalReportForm report1 = new CrystalReportForm();
+            report1.Show();
+            Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Shahid.CrystalReportForm2 report2 = new CrystalReportForm2();
+            report2.Show();
+            Visible = false;
+        }
     }
 }

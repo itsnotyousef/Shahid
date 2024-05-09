@@ -48,5 +48,12 @@ namespace Shahid
             string description = AddingVideoFormVideoDescriptionTextBox.Text.ToString();
             DataBase.AddVideo(  video_name, url,video_type,age_allowed,rating,views,description);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminForm Form = new AdminForm();
+            Form.Show();
+            Visible = false;
+        }
     }
 }
