@@ -80,11 +80,23 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CrystalReportForm.Designer.cs">
       <DependentUpon>CrystalReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrystalReportForm2.Designer.cs">
+      <DependentUpon>CrystalReportForm2.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="DispalyVideoForm.cs">
@@ -156,8 +168,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReportForm.resx">
       <DependentUpon>CrystalReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportForm2.resx">
+      <DependentUpon>CrystalReportForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DispalyVideoForm.resx">
       <DependentUpon>DispalyVideoForm.cs</DependentUpon>
