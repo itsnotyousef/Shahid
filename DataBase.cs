@@ -43,6 +43,10 @@ namespace Shahid
             {
                 password = dr[0].ToString();
             }
+            else
+            {
+                return false;
+            }
             if (password == enteredPassword)
                 return true;
             else
@@ -61,16 +65,17 @@ namespace Shahid
             video retrivedVideo = new video();
 
             if (dr.Read())
+            {
 
-            retrivedVideo.VideoId = Convert.ToInt32(dr[0].ToString());
-            retrivedVideo.Video_Name = dr[1].ToString();
-            retrivedVideo.URL = dr[2].ToString();
-            retrivedVideo.Video_Type = dr[3].ToString();
-            retrivedVideo.Age_Allowed = Convert.ToInt32(dr[4].ToString());
-            retrivedVideo.rate = Convert.ToInt32(dr[5].ToString());
-            retrivedVideo.views = Convert.ToInt32(dr[6].ToString());
-            retrivedVideo.description = dr[7].ToString();
-
+                retrivedVideo.VideoId = Convert.ToInt32(dr[0].ToString());
+                retrivedVideo.Video_Name = dr[1].ToString();
+                retrivedVideo.URL = dr[2].ToString();
+                retrivedVideo.Video_Type = dr[3].ToString();
+                retrivedVideo.Age_Allowed = Convert.ToInt32(dr[4].ToString());
+                retrivedVideo.rate = Convert.ToInt32(dr[5].ToString());
+                retrivedVideo.views = Convert.ToInt32(dr[6].ToString());
+                retrivedVideo.description = dr[7].ToString();
+            }
             return retrivedVideo;
         }
         public static int GetUserId(string Mail)
@@ -91,36 +96,118 @@ namespace Shahid
         }
         public static void AddRate(int user_id, int video_id, int rate)
         {
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "insert into rate values (:user_id , :video_id  , :rate ) ";
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("user_id", user_id);
-            cmd.Parameters.Add("video_id", video_id);
-            cmd.Parameters.Add("rate", rate);
-          
-            int r = cmd.ExecuteNonQuery();
+            OracleCommand CheckCmd = new OracleCommand();
+            CheckCmd.Connection = conn;
+            CheckCmd.CommandText = "select * from rate where user_id = :user_id and video_id = :video_id";
+            CheckCmd.CommandType = CommandType.Text;
+            CheckCmd.Parameters.Add("user_id", user_id);
+            CheckCmd.Parameters.Add("video_id", video_id);
+
+            OracleDataReader dr = CheckCmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                OracleCommand update = new OracleCommand();
+                update.Connection = conn;
+                update.CommandText = "update rate set rate = :rate where user_id = :user_id and video_id = :video_id";
+                update.CommandType = CommandType.Text;
+                update.Parameters.Add("user_id", user_id);
+                update.Parameters.Add("video_id", video_id);
+                update.Parameters.Add("rate", rate);
+
+                try
+                {
+                    int u = update.ExecuteNonQuery();
+                    MessageBox.Show("rating updated");
+                }
+                catch
+                {
+                    MessageBox.Show("please select video");
+                }
+                
+                
+            }
+            else
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "insert into rate values (:user_id , :video_id  , :rate ) ";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("user_id", user_id);
+                cmd.Parameters.Add("video_id", video_id);
+                cmd.Parameters.Add("rate", rate);
+                try
+                {
+                    int r = cmd.ExecuteNonQuery();
+                    MessageBox.Show("rating added");
+                }
+                catch
+                {
+                    MessageBox.Show("please select video");
+                }
+
+                
+            }
+
+            
         }
         public static void AddToFavoriteList(int user_id, int video_id)
         {
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "insert into Favorite_List values (:user_id , :video_id ) ";
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("user_id", user_id);
-            cmd.Parameters.Add("video_id", video_id);
-            int r = cmd.ExecuteNonQuery();
+            OracleCommand checkingCmd = new OracleCommand();
+            checkingCmd.Connection = conn;
+            checkingCmd.CommandText = "select * from Favorite_List where video_id = :video_id and user_id = :user_id";
+            checkingCmd.CommandType = CommandType.Text;
+            checkingCmd.Parameters.Add("video_id", video_id);
+            checkingCmd.Parameters.Add("user_id", user_id);
+
+            OracleDataReader dr = checkingCmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                MessageBox.Show("already in favorite");
+            }
+            else
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "insert into Favorite_List values (:user_id , :video_id ) ";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("user_id", user_id);
+                cmd.Parameters.Add("video_id", video_id);
+                int r = cmd.ExecuteNonQuery();
+                MessageBox.Show("added to favorite");
+            }
+
+            
         }
 
         public static void AddToWatchLaterList(int user_id, int video_id)
         {
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "insert into Watch_Later_List values (:user_id , :video_id ) ";
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("user_id", user_id);
-            cmd.Parameters.Add("video_id", video_id);
-            int r = cmd.ExecuteNonQuery();
+            OracleCommand checkingCmd = new OracleCommand();
+            checkingCmd.Connection = conn;
+            checkingCmd.CommandText = "select * from Watch_Later_List where video_id = :video_id and user_id = :user_id";
+            checkingCmd.CommandType = CommandType.Text;
+            checkingCmd.Parameters.Add("video_id", video_id);
+            checkingCmd.Parameters.Add("user_id", user_id);
+
+            OracleDataReader dr = checkingCmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                MessageBox.Show("already in watch later");
+            }
+            else
+            {
+                
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "insert into Watch_Later_List values (:user_id , :video_id ) ";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("user_id", user_id);
+                cmd.Parameters.Add("video_id", video_id);
+                int r = cmd.ExecuteNonQuery();
+                MessageBox.Show("added to watch later");
+            }
         }
         public static int GetVideoId(string name)
         {

@@ -71,13 +71,13 @@ namespace Shahid
 
         private void PlayVideoOneButton_Click(object sender, EventArgs e)
         {
-            video1 = DataBase.Retrive_Video((Int32)(5));
+            video1 = DataBase.Retrive_Video((Int32)(1));
             DisplayVideo(video1.URL , axWindowsMediaPlayer1);
         }
 
         private void PlayVideoTwoButton_Click(object sender, EventArgs e)
         {
-            video2 = DataBase.Retrive_Video((Int32)(6));
+            video2 = DataBase.Retrive_Video((Int32)(2));
             DisplayVideo(video2.URL , axWindowsMediaPlayer2);
         }
 
@@ -85,16 +85,31 @@ namespace Shahid
         {
             int user_id = Shahid.LoginForm.user_id;
             int video_id = video1.VideoId;
-            int rate = Convert.ToInt32(RatingVidOneTextBox.Text);
-            DataBase.AddRate(user_id, video_id, rate);
+            try
+            {
+                int rate = Convert.ToInt32(RatingVidOneTextBox.Text);
+                DataBase.AddRate(user_id, video_id, rate);
+            }
+            catch
+            {
+                MessageBox.Show("invalid rating");
+            }
+            
         }
 
         private void AddVideoTwoRateButton_Click(object sender, EventArgs e)
         {
             int user_id = Shahid.LoginForm.user_id;
             int video_id = video2.VideoId;
-            int rate = Convert.ToInt32(RatingVidTwoTextBox.Text);
-            DataBase.AddRate(user_id, video_id, rate);
+            try
+            {
+                int rate = Convert.ToInt32(RatingVidTwoTextBox.Text);
+                DataBase.AddRate(user_id, video_id, rate);
+            }
+            catch
+            {
+                MessageBox.Show("invalid rating");
+            }
         }
 
        
@@ -130,23 +145,30 @@ namespace Shahid
 
         private void ShowVideoOneDetailsButton_Click(object sender, EventArgs e)
         {
-            string name = "video_name = "+video1.Video_Name + "\n";
-            string type = "--" + video1.Video_Type +"--" + "\n";
-            string age_allowed = "+"+video1.Age_Allowed + "\n";
-            string description = "Description : " + video1.description + "\n";
-            string watches = "Views = " + video1.views + "\n";
-            richTextBox1.Text = name + type + age_allowed + description + watches;
+            if (!string.IsNullOrEmpty(video1.Video_Name))
+            {
+                string name = "video_name = " + video1.Video_Name + "\n";
+                string type = "--" + video1.Video_Type + "--" + "\n";
+                string age_allowed = "+" + video1.Age_Allowed + "\n";
+                string description = "Description : " + video1.description + "\n";
+                string watches = "Views = " + video1.views + "\n";
+                richTextBox1.Text = name + type + age_allowed + description + watches;
+            }
+            
         }
 
         private void ShowVideoTwoDetailsButton_Click(object sender, EventArgs e)
         {
-            string name = "video_name = " + video2.Video_Name + "\n";
-            string type = "" + video2.Video_Type + "\n";
-            string age_allowed = "+" + video2.Age_Allowed + "\n";
-            string description = "Description : " + video2.description + "\n";
-            string watches = "Views = " + video2.views + "\n";
-            richTextBox2.Text = name + type + age_allowed + description + watches;
-
+            if (!string.IsNullOrEmpty(video2.Video_Name))
+            {
+                string name = "video_name = " + video2.Video_Name + "\n";
+                string type = "" + video2.Video_Type + "\n";
+                string age_allowed = "+" + video2.Age_Allowed + "\n";
+                string description = "Description : " + video2.description + "\n";
+                string watches = "Views = " + video2.views + "\n";
+                richTextBox2.Text = name + type + age_allowed + description + watches;
+            }
+            
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -163,12 +185,20 @@ namespace Shahid
         {
             string video_name = SearchVideoTextBox.Text;
             int video_id = DataBase.GetVideoId(video_name);
-            Shahid.DispalyVideoForm.video3 = DataBase.Retrive_Video(video_id);
-            Shahid.DispalyVideoForm DisplayForm = new DispalyVideoForm();
-            UserMainMenu.DisplayVideo("", axWindowsMediaPlayer2);
-            UserMainMenu.DisplayVideo("", axWindowsMediaPlayer1);
-            DisplayForm.Show();
-            Visible = false;
+            if(video_id == -1)
+            {
+                MessageBox.Show("no video with this name");
+            }
+            else
+            {
+                Shahid.DispalyVideoForm.video3 = DataBase.Retrive_Video(video_id);
+                Shahid.DispalyVideoForm DisplayForm = new DispalyVideoForm();
+                UserMainMenu.DisplayVideo("", axWindowsMediaPlayer2);
+                UserMainMenu.DisplayVideo("", axWindowsMediaPlayer1);
+                DisplayForm.Show();
+                Visible = false;
+            }
+            
         }
 
         private void LogOutButton_Click(object sender, EventArgs e)

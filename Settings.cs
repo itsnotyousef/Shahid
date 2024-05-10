@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,9 +33,18 @@ namespace Shahid
         private void SettingsChangePasswordButton_Click(object sender, EventArgs e)
         {
             string new_password = SettingsNewPasswordTextBox.Text;
-            DataBase.Save_Password(Shahid.LoginForm.user_id, new_password);
-            SettingsCurrentPasswordTextBox.Text = new_password;
-            SettingsNewPasswordTextBox.Text = "";
+            if (IsValidPassword(new_password))
+            {
+                DataBase.Save_Password(Shahid.LoginForm.user_id, new_password);
+                SettingsCurrentPasswordTextBox.Text = new_password;
+                SettingsNewPasswordTextBox.Text = "";
+                MessageBox.Show("password changed successfully");
+            }
+            else
+            {
+                MessageBox.Show("invalid password");
+            }
+            
         }
 
         private void Settings_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,6 +62,18 @@ namespace Shahid
             Shahid.UserMainMenu mainmenu = new UserMainMenu();
             mainmenu.Show();
             Visible = false;
+        }
+
+        static bool IsValidPassword(string password)
+        {
+            // Define a regular expression for password validation
+            string pattern = @"^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$";
+
+            // Create Regex instance
+            Regex regex = new Regex(pattern);
+
+            // Check if the password matches the pattern
+            return regex.IsMatch(password);
         }
     }
 }

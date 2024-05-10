@@ -29,8 +29,20 @@ namespace Shahid
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CR.SetParameterValue(0, USERIDcomboBox1.Text);
-            crystalReportViewer1.ReportSource = CR;
+            if (!string.IsNullOrEmpty(USERIDcomboBox1.Text))
+            {
+
+                CR.SetParameterValue(0, USERIDcomboBox1.Text);
+                crystalReportViewer1.ReportSource = CR;
+
+            }
+            else
+            {
+
+                MessageBox.Show("please select a value from combo box");
+
+            }
+
 
         }
 

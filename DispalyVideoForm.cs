@@ -35,20 +35,32 @@ namespace Shahid
 
         private void ShowDisplayVidDetailsButton_Click(object sender, EventArgs e)
         {
-            string name = "video_name = " + video3.Video_Name + "\n";
-            string type = "" + video3.Video_Type + "\n";
-            string age_allowed = "+" + video3.Age_Allowed + "\n";
-            string description = "Description : " + video3.description + "\n";
-            string watches = "Views = " + video3.views + "\n";
-            DisplayedVideoRichBox.Text = name + type + age_allowed + description + watches;
+            if (!string.IsNullOrEmpty(video3.Video_Name))
+            {
+                string name = "video_name = " + video3.Video_Name + "\n";
+                string type = "" + video3.Video_Type + "\n";
+                string age_allowed = "+" + video3.Age_Allowed + "\n";
+                string description = "Description : " + video3.description + "\n";
+                string watches = "Views = " + video3.views + "\n";
+                DisplayedVideoRichBox.Text = name + type + age_allowed + description + watches;
+            }
+                
         }
 
         private void RateDisplayedVideoButton_Click(object sender, EventArgs e)
         {
             int user_id = Shahid.LoginForm.user_id;
             int video_id = video3.VideoId;
-            int rate = Convert.ToInt32(DisplayedVidTextBox.Text);
-            DataBase.AddRate(user_id, video_id, rate);
+            try
+            {
+                int rate = Convert.ToInt32(DisplayedVidTextBox.Text);
+                DataBase.AddRate(user_id, video_id, rate);
+            }
+            catch
+            {
+                MessageBox.Show("invalid rating");
+            }
+            
         }
 
         private void BackToMainMenuButton_Click(object sender, EventArgs e)
