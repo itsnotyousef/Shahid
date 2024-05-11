@@ -31,7 +31,6 @@ namespace Shahid
         {
             this.AddingVideoFormVideoNameTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoURLTextBox = new System.Windows.Forms.TextBox();
-            this.AddingVideoFormVideoviewsTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoTypeTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoAgeAllowedTextBox = new System.Windows.Forms.TextBox();
             this.AddingVideoFormVideoDescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -39,7 +38,6 @@ namespace Shahid
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.AddingViedoButton = new System.Windows.Forms.Button();
@@ -67,16 +65,6 @@ namespace Shahid
             this.AddingVideoFormVideoURLTextBox.TabIndex = 2;
             this.AddingVideoFormVideoURLTextBox.TextChanged += new System.EventHandler(this.AddingVideoFormVideoURLTextBox_TextChanged);
             // 
-            // AddingVideoFormVideoviewsTextBox
-            // 
-            this.AddingVideoFormVideoviewsTextBox.BackColor = System.Drawing.Color.Black;
-            this.AddingVideoFormVideoviewsTextBox.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddingVideoFormVideoviewsTextBox.ForeColor = System.Drawing.Color.DarkCyan;
-            this.AddingVideoFormVideoviewsTextBox.Location = new System.Drawing.Point(322, 446);
-            this.AddingVideoFormVideoviewsTextBox.Name = "AddingVideoFormVideoviewsTextBox";
-            this.AddingVideoFormVideoviewsTextBox.Size = new System.Drawing.Size(521, 33);
-            this.AddingVideoFormVideoviewsTextBox.TabIndex = 3;
-            // 
             // AddingVideoFormVideoTypeTextBox
             // 
             this.AddingVideoFormVideoTypeTextBox.BackColor = System.Drawing.Color.Black;
@@ -92,7 +80,7 @@ namespace Shahid
             this.AddingVideoFormVideoAgeAllowedTextBox.BackColor = System.Drawing.Color.Black;
             this.AddingVideoFormVideoAgeAllowedTextBox.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddingVideoFormVideoAgeAllowedTextBox.ForeColor = System.Drawing.Color.DarkCyan;
-            this.AddingVideoFormVideoAgeAllowedTextBox.Location = new System.Drawing.Point(322, 378);
+            this.AddingVideoFormVideoAgeAllowedTextBox.Location = new System.Drawing.Point(322, 399);
             this.AddingVideoFormVideoAgeAllowedTextBox.Name = "AddingVideoFormVideoAgeAllowedTextBox";
             this.AddingVideoFormVideoAgeAllowedTextBox.Size = new System.Drawing.Size(521, 33);
             this.AddingVideoFormVideoAgeAllowedTextBox.TabIndex = 5;
@@ -102,7 +90,7 @@ namespace Shahid
             this.AddingVideoFormVideoDescriptionTextBox.BackColor = System.Drawing.Color.Black;
             this.AddingVideoFormVideoDescriptionTextBox.Font = new System.Drawing.Font("Ravie", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddingVideoFormVideoDescriptionTextBox.ForeColor = System.Drawing.Color.DarkCyan;
-            this.AddingVideoFormVideoDescriptionTextBox.Location = new System.Drawing.Point(321, 511);
+            this.AddingVideoFormVideoDescriptionTextBox.Location = new System.Drawing.Point(321, 471);
             this.AddingVideoFormVideoDescriptionTextBox.Name = "AddingVideoFormVideoDescriptionTextBox";
             this.AddingVideoFormVideoDescriptionTextBox.Size = new System.Drawing.Size(521, 33);
             this.AddingVideoFormVideoDescriptionTextBox.TabIndex = 6;
@@ -141,31 +129,22 @@ namespace Shahid
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 381);
+            this.label4.Location = new System.Drawing.Point(37, 402);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(279, 30);
             this.label4.TabIndex = 11;
             this.label4.Text = "Video Allowed Age";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 449);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 30);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Video veiws";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Ravie", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(37, 514);
+            this.label6.Location = new System.Drawing.Point(38, 471);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(278, 30);
             this.label6.TabIndex = 13;
             this.label6.Text = "Video Description";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -213,7 +192,6 @@ namespace Shahid
             this.Controls.Add(this.AddingViedoButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -221,7 +199,6 @@ namespace Shahid
             this.Controls.Add(this.AddingVideoFormVideoDescriptionTextBox);
             this.Controls.Add(this.AddingVideoFormVideoAgeAllowedTextBox);
             this.Controls.Add(this.AddingVideoFormVideoTypeTextBox);
-            this.Controls.Add(this.AddingVideoFormVideoviewsTextBox);
             this.Controls.Add(this.AddingVideoFormVideoURLTextBox);
             this.Controls.Add(this.AddingVideoFormVideoNameTextBox);
             this.Name = "AddingVideoForm";
@@ -237,7 +214,6 @@ namespace Shahid
 
         private System.Windows.Forms.TextBox AddingVideoFormVideoNameTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoURLTextBox;
-        private System.Windows.Forms.TextBox AddingVideoFormVideoviewsTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoTypeTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoAgeAllowedTextBox;
         private System.Windows.Forms.TextBox AddingVideoFormVideoDescriptionTextBox;
@@ -245,7 +221,6 @@ namespace Shahid
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button AddingViedoButton;

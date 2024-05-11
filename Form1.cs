@@ -102,5 +102,21 @@ namespace Shahid
             return regex.IsMatch(email);
         }
 
+        private void label2_MouseHover(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.DarkGray;
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.White;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Shahid.LoginForm login = new LoginForm();
+            login.Show();
+            Visible = false;
+        }
     }
 }

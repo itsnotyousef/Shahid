@@ -48,6 +48,7 @@ namespace Shahid
             this.SettingsNameTextBox.ForeColor = System.Drawing.Color.DarkCyan;
             this.SettingsNameTextBox.Location = new System.Drawing.Point(446, 83);
             this.SettingsNameTextBox.Name = "SettingsNameTextBox";
+            this.SettingsNameTextBox.ReadOnly = true;
             this.SettingsNameTextBox.Size = new System.Drawing.Size(278, 33);
             this.SettingsNameTextBox.TabIndex = 0;
             // 
@@ -58,6 +59,7 @@ namespace Shahid
             this.SettingsEmailTextBox.ForeColor = System.Drawing.Color.DarkCyan;
             this.SettingsEmailTextBox.Location = new System.Drawing.Point(446, 158);
             this.SettingsEmailTextBox.Name = "SettingsEmailTextBox";
+            this.SettingsEmailTextBox.ReadOnly = true;
             this.SettingsEmailTextBox.Size = new System.Drawing.Size(278, 33);
             this.SettingsEmailTextBox.TabIndex = 1;
             this.SettingsEmailTextBox.TextChanged += new System.EventHandler(this.SettingsEmailTextBox_TextChanged);
@@ -122,6 +124,7 @@ namespace Shahid
             this.SettingsCurrentPasswordTextBox.ForeColor = System.Drawing.Color.DarkCyan;
             this.SettingsCurrentPasswordTextBox.Location = new System.Drawing.Point(447, 240);
             this.SettingsCurrentPasswordTextBox.Name = "SettingsCurrentPasswordTextBox";
+            this.SettingsCurrentPasswordTextBox.ReadOnly = true;
             this.SettingsCurrentPasswordTextBox.Size = new System.Drawing.Size(277, 33);
             this.SettingsCurrentPasswordTextBox.TabIndex = 8;
             // 

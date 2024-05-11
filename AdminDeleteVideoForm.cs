@@ -37,8 +37,16 @@ namespace Shahid
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int video_id = Convert.ToInt32(VideoIdDeleteTextBox.Text.ToString());
-            DataBase.DeleteVideo(video_id);
+            try
+            {
+                int video_id = Convert.ToInt32(VideoIdDeleteTextBox.Text.ToString());
+                DataBase.DeleteVideo(video_id);
+            }
+            catch
+            {
+                MessageBox.Show("invalid id");
+            }
+            
 
         }
     }

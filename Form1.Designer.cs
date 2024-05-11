@@ -39,6 +39,8 @@ namespace Shahid
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.SignUpButton = new System.Windows.Forms.Button();
             this.Sign_up_label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FirstNameLabel
@@ -119,6 +121,7 @@ namespace Shahid
             this.PasswordTextBox.ForeColor = System.Drawing.Color.DarkCyan;
             this.PasswordTextBox.Location = new System.Drawing.Point(315, 276);
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(259, 33);
             this.PasswordTextBox.TabIndex = 7;
             // 
@@ -127,7 +130,7 @@ namespace Shahid
             this.SignUpButton.BackColor = System.Drawing.Color.Black;
             this.SignUpButton.Font = new System.Drawing.Font("Ravie", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpButton.ForeColor = System.Drawing.Color.DarkCyan;
-            this.SignUpButton.Location = new System.Drawing.Point(330, 352);
+            this.SignUpButton.Location = new System.Drawing.Point(330, 371);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(229, 70);
             this.SignUpButton.TabIndex = 8;
@@ -145,12 +148,38 @@ namespace Shahid
             this.Sign_up_label.TabIndex = 9;
             this.Sign_up_label.Text = "Sign_up";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(131, 325);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(281, 33);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Have an Account?";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(418, 325);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 33);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Login";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
+            this.label2.MouseHover += new System.EventHandler(this.label2_MouseHover);
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(854, 453);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Sign_up_label);
             this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.PasswordTextBox);
@@ -182,6 +211,8 @@ namespace Shahid
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Button SignUpButton;
         private System.Windows.Forms.Label Sign_up_label;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

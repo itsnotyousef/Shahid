@@ -454,6 +454,21 @@ namespace Shahid
 
         public static void DeleteVideo(int video_id) 
         {
+            OracleCommand checkCmd = new OracleCommand();
+            checkCmd.Connection = conn;
+            checkCmd.CommandText = " select * from Video Where video_id =: video_id  ";
+            checkCmd.CommandType = CommandType.Text;
+            checkCmd.Parameters.Add("video_id", video_id);
+
+            OracleDataReader dr = checkCmd.ExecuteReader();
+            
+
+            if (!dr.Read())
+            {
+                MessageBox.Show("video not found");
+                return;
+            }
+
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandText = " Delete from Video Where video_id =: video_id  " ;
@@ -464,7 +479,6 @@ namespace Shahid
             if (r != -1)
             {
                 MessageBox.Show("Video Has Been Deleted <333");
-               
             }
 
         }

@@ -45,6 +45,7 @@ namespace Shahid
             this.AllUsersRichBox.ForeColor = System.Drawing.Color.DarkCyan;
             this.AllUsersRichBox.Location = new System.Drawing.Point(3, 98);
             this.AllUsersRichBox.Name = "AllUsersRichBox";
+            this.AllUsersRichBox.ReadOnly = true;
             this.AllUsersRichBox.Size = new System.Drawing.Size(1612, 495);
             this.AllUsersRichBox.TabIndex = 0;
             this.AllUsersRichBox.Text = "";

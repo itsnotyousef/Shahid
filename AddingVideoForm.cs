@@ -42,11 +42,52 @@ namespace Shahid
             string video_name = AddingVideoFormVideoNameTextBox.Text.ToString();
             string url = AddingVideoFormVideoURLTextBox.Text.ToString();
             string video_type = AddingVideoFormVideoTypeTextBox.Text.ToString();
-            int age_allowed = Convert.ToInt32(AddingVideoFormVideoAgeAllowedTextBox.Text.ToString());
-            int rating = Convert.ToInt32(AddingVideoFormVideoviewsTextBox.Text.ToString());
-            int views = Convert.ToInt32(AddingVideoFormVideoviewsTextBox.Text.ToString());
+            int age_allowed;
+
+            try
+            {
+                age_allowed = Convert.ToInt32(AddingVideoFormVideoAgeAllowedTextBox.Text.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a number in age");
+                return;
+            }
+            
             string description = AddingVideoFormVideoDescriptionTextBox.Text.ToString();
-            DataBase.AddVideo(  video_name, url,video_type,age_allowed,rating,views,description);
+
+            if (string.IsNullOrEmpty(video_name))
+            {
+                MessageBox.Show("Please enter a video name.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(url))
+            {
+                MessageBox.Show("Please enter a video URL.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(video_type))
+            {
+                MessageBox.Show("Please enter a video type.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(description))
+            {
+                MessageBox.Show("Please enter a video description.");
+                return;
+            }
+
+            if (age_allowed < 0)
+            {
+                MessageBox.Show("Please enter a valid age allowed value (a non-negative integer).");
+                return;
+            }
+
+            DataBase.AddVideo(video_name, url, video_type, age_allowed, 0, 0, description);
+            MessageBox.Show("Video added successfully!");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,6 +95,11 @@ namespace Shahid
             AdminForm Form = new AdminForm();
             Form.Show();
             Visible = false;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

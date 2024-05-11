@@ -65,6 +65,7 @@ namespace Shahid
             this.richTextBox1.ForeColor = System.Drawing.Color.DarkCyan;
             this.richTextBox1.Location = new System.Drawing.Point(20, 109);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(319, 373);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
@@ -100,6 +101,7 @@ namespace Shahid
             this.richTextBox2.ForeColor = System.Drawing.Color.DarkCyan;
             this.richTextBox2.Location = new System.Drawing.Point(400, 109);
             this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(328, 373);
             this.richTextBox2.TabIndex = 6;
             this.richTextBox2.Text = "";

@@ -58,5 +58,27 @@ namespace Shahid
         {
             DataBase.conn.Dispose();
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Shahid.SignUpForm sign_up = new SignUpForm();
+            sign_up.Show();
+            Visible = false;
+        }
+
+        private void label2_MouseHover(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.DarkGray;
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.White;
+        }
     }
 }
